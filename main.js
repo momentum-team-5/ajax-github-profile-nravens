@@ -10,41 +10,47 @@ fetch(userURL)
     infoDiv.appendChild(infoList)
 
     let listNameEl = document.createElement('li')
-    let nameEl = document.createElement('p')
     infoList.appendChild(listNameEl)
+    
+    let nameEl = document.createElement('p')
     listNameEl.appendChild(nameEl)
     nameEl.innerText = `Name ${data.name}`
+    
+
 
     let listPathEl = document.createElement('li')
-    let pathEl = document.createElement('p')
-    //let pathText = document.createElement('p')
-    pathText = 'nravens'
+    infoList.appendChild(listPathEl)
+    
     let pathLinkEl = document.createElement('a')
-    infoList.appendChild(pathLinkEl)
-    //listPathEl.innerText = "GitHub URL"
-    listNameEl.appendChild(pathEl)
     pathLinkEl.href = data.html_url
-    //pathLinkEl.appendChild(pathText)
-    pathLinkEl.appendChild    
+    listPathEl.appendChild(pathLinkEl)
+    
+    let pathEl = document.createElement('p')
+    pathEl.innerText = data.login
+    pathLinkEl.appendChild(pathEl)
+
+
 
     let listCompanyEl = document.createElement('li')
-    let companyEl = document.createElement('p')
     infoList.appendChild(listCompanyEl)
-    listNameEl.appendChild(companyEl)
+    
+    let companyEl = document.createElement('p')
+    listCompanyEl.appendChild(companyEl)
     companyEl.innerText = `@${data.company}`
     
 
+
     let listSiteEl = document.createElement('li')
-    let siteEl = document.createElement('p')
-    let siteLink = document.createElement('a')
-    let siteText =document.createElement('p')
-    siteLink.href = data.blog
-    siteLink.appendChild()
     infoList.appendChild(listSiteEl)
-    listNameEl.appendChild(siteEl)
-    siteEl.innerText = 'Website'
-    siteLink.appendChild(siteText)
-    siteEl.appendChild(siteLink)
+    
+    let siteLinkEl = document.createElement('a')
+    siteLinkEl.href = data.blog
+    listSiteEl.appendChild(siteLinkEl)
+    
+    let siteEl = document.createElement('p')
+    siteEl.innerText = data.blog
+    siteLinkEl.appendChild(siteEl)
+    
 
 
     let avatarPic = document.createElement('img')
